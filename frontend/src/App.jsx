@@ -1,12 +1,18 @@
 import { useState } from "react";
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import MainPage from "./components/pages/MainPage";
+import HomePage from "./components/pages/HomePage";
+
 function App() {
   return (
-    <div className="grid h-screen grid-rows-[auto_1fr_auto] p-2 gap-2 ">
-      <header className="border">Header</header>
-      <main className="border">Main</main>
-      <footer className="border">Footer</footer>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/welcome" element={<MainPage />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 
